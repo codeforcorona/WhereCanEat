@@ -45,25 +45,20 @@
                 </div>
             </div>
             <span class="p-5"></span>
-            <div class="md:flex md:flex-wrap justify-center p-10 shadow-lg rounded-lg bg-orange-200">
-                <div class='p-2 px-2' v-for="outlet in outlets" :key="outlet.id">
-                    <Card shadow :bordered="false" class="p-2">
-                        <div>
-                            <p slot="title" class="border-b border-gray-500">
-                                <img src="@/assets/images/food2.jpeg" class="object-cover h-32 w-32" alt="Outlet image here">
-                                <span>
-                                    {{outlet.name}}, {{outlet.cuisine}}
-                                </span>
-                            </p>
-                            <p class="p-3 flex-wrap w-32">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            </p>
-                            <Button type="primary" class="pt-2" @click="logClick(outlet.id)">
-                                Order Now!
-                            </Button>
-                        </div>
-                    </Card>
-                </div>
+            <div class="md:flex md:flex-wrap justify-centre p-13 shadow-lg rounded-lg bg-orange-200">
+              <!--foodcards_-->
+              <foodcard
+              class= 'p-2 px-2'
+              v-for="outlet in outlets" 
+              :key="outlet.id"
+              :cuisine="outlet.cuisine"
+              :name="outlet.name"
+              :time="outlet.time"
+              :rate="outlet.rate"
+              :img="outlet.image"
+              :imgAlt="outlet.imageAlt"
+              url = "https://google.com.sg"
+              />
             </div>
         </div>
     </div>
@@ -71,6 +66,7 @@
 
 <script>
 import NavBar from '@/components/NavBar';
+import foodcard from '@/components/foodcard';
 import axois from '@nuxtjs/axios';
 
 export default {
@@ -143,7 +139,7 @@ export default {
         }        
     },
     components: {
-        NavBar
+        NavBar, foodcard
     },
     layout: 'nonavbar',
 }
