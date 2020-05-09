@@ -2,7 +2,7 @@
   <div class="flex flex-col h-screen justify-between">
     <NavBar />
     <nuxt />
-    <footer class="h-10"><Footer/></footer>
+    <footer><Footer/></footer>
   </div>
 </template>
 

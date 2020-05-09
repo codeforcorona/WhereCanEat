@@ -1,12 +1,12 @@
 <template>
     <div class="flex items-center justify-between flex-wrap bg-teal-500 p-6 lg:px-64 shadow-lg">
         <!-- div for logo and name -->
-        <div class="flex items-center">
-            <img src="" alt="Logo Here">
-            <h1 class="font-semibold text-xl tracking-tight">WhereCanEat!</h1>
+        <div class="flex items-center space-x-1">
+            <img src="@/assets/images/logo3.svg" alt="Logo">
+            <h1 class="font-semibold text-2xl tracking-tight">WhereCanEat!</h1>
         </div>
         
-        <slot></slot>
+        <slot class="h-auto"></slot>
 
         <!-- For other options -->
         <div class="hidden md:block text-lg tracking-wide ">

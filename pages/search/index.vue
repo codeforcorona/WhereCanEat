@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Nav-Bar>
-            <div class="flex w-1/3 items-center border-b border-b-2 border-teal-500 py-2 bg-gray-200 rounded p-2 hover:bg-white">
+            <div class="flex w-1/3 items-center border-b border-b-2 border-teal-500 bg-gray-200 rounded p-2 hover:bg-white">
                 <input v-model="searchText"/>
                 <button type="button">
                     Search
@@ -33,15 +33,20 @@
             <div class="md:flex md:flex-wrap justify-center p-10 shadow-lg rounded-lg bg-gray-200">
                 <div class='p-2 px-2' v-for="outlet in outlets" :key="outlet.id">
                     <Card shadow :bordered="false" class="p-2">
-                        <p slot="title">
-                            <img src="" alt="Outlet image here">
-                        </p>
-                        <p class="pb-4">
-                            {{outlet.name}}, {{outlet.cuisine}}
-                        </p>
-                        <Button type="primary" class="pt-2">
-                            Order Now!
-                        </Button>
+                        <div>
+                            <p slot="title" class="border-b border-gray-500">
+                                <img src="@/assets/images/food2.jpeg" class="object-cover h-32 w-32" alt="Outlet image here">
+                                <span>
+                                    {{outlet.name}}, {{outlet.cuisine}}
+                                </span>
+                            </p>
+                            <p class="p-3 flex-wrap w-32">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            </p>
+                            <Button type="primary" class="pt-2">
+                                Order Now!
+                            </Button>
+                        </div>
                     </Card>
                 </div>
             </div>
@@ -118,7 +123,7 @@ export default {
 }
 
 input {
-    @apply appearance-none bg-transparent text-xl border-none w-full h-full text-gray-700 mr-3 py-1 px-2 leading-tight
+    @apply appearance-none bg-transparent text-xl border-none w-full text-gray-700 mr-3 px-2 leading-tight
 }
 
 button {
