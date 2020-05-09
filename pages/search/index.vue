@@ -76,9 +76,7 @@ export default {
     components: {
         NavBar
     },
-    computed: {
-
-    }
+    layout: 'nonavbar'
 }
 </script>
 

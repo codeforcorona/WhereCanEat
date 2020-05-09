@@ -1,9 +1,10 @@
 <template>
-  <div class="container">
-    <NavBar/>
-    <h1>This is index.vue</h1>
-    <Button type='primary'>iView Button</Button>
-    <h2>{{todo}}</h2>
+  <div class="flex-col min-w-full items-center justify-center p-6 lg:px-64">
+    <span class="p-5"></span>
+    <div class="text-center p-6 h-64 bg-teal-300 shadow-lg rounded-lg">
+      <h1>Who are we?</h1>
+      <p>We aspire to create a food platform that does not discriminate</p>
+    </div>
   </div>
 </template>
 
@@ -39,7 +40,4 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  @apply flex-col min-w-full items-center justify-center
-}
 </style>

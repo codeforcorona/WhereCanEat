@@ -9,7 +9,7 @@
         <slot></slot>
 
         <!-- For other options -->
-        <div class="text-lg tracking-wide">
+        <div class="hidden md:block text-lg tracking-wide ">
             <nuxt-link 
                 to="/" 
                 class="p-3 text-teal-300 hover:text-white"
@@ -34,6 +34,10 @@
             >
                 Contact Us
             </nuxt-link>
+        </div>
+
+        <div class="block md:hidden">
+            <img src="../assets/images/menu3.svg" alt="Menu">
         </div>
     </div>
 </template>
