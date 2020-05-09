@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col bg-teal-200 shadow-md items-center justify-center">
+    <div class="flex flex-col bg-orange-200 shadow-md items-center justify-center">
         <!-- For the social media stuff -->
         <div class="justify-center space-x-5 tracking-wide py-2">
             <span>Github / Twitter / Facebook / Instagram </span>
