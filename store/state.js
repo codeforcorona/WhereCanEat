@@ -1,6 +1,7 @@
 export default () => ({
     searchText: 'Search for your favourite food!',
     foodItems: [],
+    shoppingCart: [],
     postalCode: 'Postal Code',
     cuisine: 'Filter Cuisine',
     filter: 'Filter',
