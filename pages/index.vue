@@ -14,18 +14,18 @@
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
 
-              <!-- Onclick need to send data to search -->
-              <button class="flex-shrink-0 bg-teal-500 border-teal-500 text-sm border-4 text-white py-1 px-2 rounded-lg hover:bg-white hover:text-teal-500 hover:border-teal-700 text-2xl">
+              <!-- Onclick need to send data to postalCode -->
+              <nuxt-link to='/search' class="flex-shrink-0 bg-teal-500 border-teal-500 text-sm border-4 text-white py-1 px-2 rounded-lg hover:bg-white hover:text-teal-500 hover:border-teal-700 text-2xl">
                   Find Food
-              </button>
+              </nuxt-link>
 
           </div>
         <div class="block flex-wrap md:flex">
-          <!-- Onclick needs to seend data on takeaway / delivery --> 
-          <nuxt-link to="/search" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Takeaway</nuxt-link>
+          <!-- Onclick needs to send data on takeaway--> 
+          <nuxt-link to="/search" v-on:click.native="set_takeaway" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Takeaway</nuxt-link>
           <span class="px-3"></span>
           <!-- Onclick needs to send data on takeaway / delivery -->
-          <nuxt-link to="/search" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Delivery</nuxt-link>
+          <nuxt-link to="/search" v-on:click.native="set_delivery" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Delivery</nuxt-link>
         </div>
       </div>
     </div>
@@ -65,7 +65,25 @@ export default {
   data: function () {
     return {
       todo: '',
-      postalCode: 'Your postal code here:'
+    }
+  },
+  computed: {
+    postalCode: {
+      get () {
+        return this.$store.state.postalCode
+      },
+      set (value) {
+        this.$store.commit('set_postalCode', value)
+      }
+    }
+  },
+  methods: {
+    set_delivery: function() {
+      this.$store.commit('set_orderType', 'Delivery')
+      console.log("set_delivery triggered")
+    },
+    set_takeaway: function() {
+      this.$store.commit('set_orderType', 'Takeaway')
     }
   },
   components: {

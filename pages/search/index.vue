@@ -58,7 +58,7 @@
                             <p class="p-3 flex-wrap w-32">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                             </p>
-                            <Button type="primary" class="pt-2">
+                            <Button type="primary" class="pt-2" @click="logClick(outlet.id)">
                                 Order Now!
                             </Button>
                         </div>
@@ -74,79 +74,78 @@ import NavBar from '@/components/NavBar';
 import axois from '@nuxtjs/axios';
 
 export default {
-    data: function() {
-        return {
-            searchText: 'Search for your favourite food!',
-            foodItems: [],
-            postalCode: 'Postal Code',
-            cuisine: 'Filter Cuisine',
-            filter: 'Filter',
-            orderType: 'Order Type',
-            sort: 'Sort by',
-            priceRange: [0,100],
-            outlets: [
-                {
-                    id: 1,
-                    name: 'Outlet 1',
-                    cuisine: 'Indian'
-                },
-                {
-                    id: 2,
-                    name: 'Outlet 2',
-                    cuisine: 'Chinese'
-                },
-                {
-                    id: 3,
-                    name: 'Outlet 3',
-                    cuisine: 'Indian'
-                },
-                {
-                    id: 4,
-                    name: 'Outlet 4',
-                    cuisine: 'Chinese'
-                },
-                {
-                    id:5,
-                    name: 'Outlet 5',
-                    cuisine: 'Indian'
-                },
-                {
-                    id: 6,
-                    name: 'Outlet 6',
-                    cuisine: 'Chinese'
-                },
-                {
-                    id: 7,
-                    name: 'Outlet 7',
-                    cuisine: 'Indian'
-                },
-                {
-                    id: 8,
-                    name: 'Outlet 8',
-                    cuisine: 'Chinese'
-                },
-                {
-                    id:9,
-                    name: 'Outlet 5',
-                    cuisine: 'Indian'
-                },
-                {
-                    id: 10,
-                    name: 'Outlet 6',
-                    cuisine: 'Chinese'
-                },
-                {
-                    id: 11,
-                    name: 'Outlet 7',
-                    cuisine: 'Indian'
-                },
-            ]
+    methods: {
+        logClick: function(v) {
+            console.log("clicked order now" + v)
         }
+    },
+    computed: {
+        postalCode: {
+            get () {
+                return this.$store.state.postalCode
+            },
+            set (value) {
+                this.$store.commit('set_postalCode', value)
+            }
+        },
+        searchText: {
+            get() {
+                return this.$store.state.searchText
+            },
+            set (value) {
+                this.$store.commit('set_searchText', value)
+            }
+        },
+        cuisine: {
+            get () {
+                return this.$store.state.cuisine
+            },
+            set (value) {
+                this.$store.commit('set_cuisine', value)
+            }
+        },
+        filter: {
+            get () {
+                return this.$store.state.filter
+            },
+            set (value) {
+                this.$store.commit('set_filter', value)
+            }
+        },
+        orderType: {
+            get () {
+                return this.$store.state.orderType
+            },
+            set (value) {
+                this.$store.commit('set_orderType', value)
+            }
+        },
+        sort: {
+            get () {
+                return this.$store.state.sort
+            },
+            set (value) {
+                this.$store.commit('set_sortBy', value)
+            }
+        },
+        priceRange: {
+            get () {
+                return this.$store.state.priceRange
+            },
+            set (value) {
+                this.$store.commit('set_priceRange', value)
+            }
+        },
+        outlets: {
+            get () {
+                return this.$store.state.outlets
+            }
+        }        
     },
     components: {
         NavBar
     },
-    layout: 'nonavbar'
+    layout: 'nonavbar',
 }
 </script>
 
