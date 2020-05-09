@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Nav-Bar>
-            <div class="flex w-1/3 items-center border-b border-b-2 border-teal-500 bg-gray-200 rounded p-2 hover:bg-white">
+            <div class="flex w-1/3 items-center border-b border-b-2 border-orange-500 bg-gray-200 rounded p-2 hover:bg-white">
                 <input v-model="searchText"/>
                 <button type="button">
                     Search
@@ -9,11 +9,11 @@
             </div>
         </Nav-Bar>
         <div class="flex lg:px-32 p-6">
-            <div class="bg-teal-300 rounded-lg shadow-lg p-5">
+            <div class="bg-orange-300 rounded-lg shadow-lg p-5">
                 <div class='flex-col text-lg space-y-5'>
-                      <div class="flex items-center border-b border-b-2 border-teal-500 py-2">
+                      <div class="flex items-center border-b border-b-2 border-orange-500 py-2">
                         <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none text-md" type="text" v-model="postalCode"/>
-                        <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                        <button class="flex-shrink-0 bg-orange-500 hover:bg-orange-700 border-orange-500 hover:border-orange-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
                             Search
                         </button>
                     </div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <span class="p-5"></span>
-            <div class="md:flex md:flex-wrap justify-center p-10 shadow-lg rounded-lg bg-teal-300">
+            <div class="md:flex md:flex-wrap justify-center p-10 shadow-lg rounded-lg bg-orange-200">
                 <div class='p-2 px-2' v-for="outlet in outlets" :key="outlet.id">
                     <Card shadow :bordered="false" class="p-2">
                         <div>
@@ -159,7 +159,7 @@ input {
 }
 
 button {
-    @apply flex-shrink-0 bg-teal-500 border-teal-500 text-sm border-4 text-white py-1 px-2 rounded
+    @apply flex-shrink-0 bg-orange-500 border-orange-500 text-sm border-4 text-white py-1 px-2 rounded
 }
 </style>
 

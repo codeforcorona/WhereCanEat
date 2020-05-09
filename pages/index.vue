@@ -1,6 +1,6 @@
 <template>
   <div class="flex-col min-w-full items-center justify-center p-5 lg:px-64">
-    <div class="flex-wrap text-center justify-center md:justify-start md:text-left md:flex p-20 bg-teal-300 shadow-lg rounded-lg items-center content-center">
+    <div class="flex-wrap text-center justify-center md:justify-start md:text-left md:flex p-20 bg-orange-300 shadow-lg rounded-lg items-center content-center">
       <img src="@/assets/images/cover1.jpg"  class="w-64 h-64 object-cover rounded-full" alt="food-image"/>
       <div class="mx-auto">
         <h1 class="font-bold text-xl md:text-5xl">What would you like today?</h1>
@@ -10,45 +10,45 @@
               <input type="text" class="focus:outline-none text-2xl" v-model='postalCode'/>
 
               <!-- Geolocation button -->
-              <svg class="fill-current hover:text-blue-700 text-teal-500 h-16 w-16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="fill-current hover:text-red-700 text-orange-500 h-16 w-16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
 
               <!-- Onclick need to send data to postalCode -->
-              <nuxt-link to='/search' class="flex-shrink-0 bg-teal-500 border-teal-500 text-sm border-4 text-white py-1 px-2 rounded-lg hover:bg-white hover:text-teal-500 hover:border-teal-700 text-2xl">
+              <nuxt-link to='/search' class="flex-shrink-0 bg-orange-500 border-orange-500 text-sm border-4 text-white py-1 px-2 rounded-lg hover:bg-orange-600 hover:text-gray-100 hover:border-orange-600 text-2xl">
                   Find Food
               </nuxt-link>
 
           </div>
         <div class="block flex-wrap md:flex">
           <!-- Onclick needs to send data on takeaway--> 
-          <nuxt-link to="/search" v-on:click.native="set_takeaway" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Takeaway</nuxt-link>
+          <nuxt-link to="/search" v-on:click.native="set_takeaway" class="rounded-lg text-4xl font-semibold bg-orange-500 shadow-md p-5 text-white hover:bg-orange-600 hover:text-gray-100 hover:border-orange-600">Order Takeaway</nuxt-link>
           <span class="px-3"></span>
           <!-- Onclick needs to send data on takeaway / delivery -->
-          <nuxt-link to="/search" v-on:click.native="set_delivery" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Delivery</nuxt-link>
+          <nuxt-link to="/search" v-on:click.native="set_delivery" class="rounded-lg text-4xl font-semibold bg-orange-500 shadow-md p-5 text-white hover:bg-orange-600 hover:text-gray-100 hover:border-orange-600">Order Delivery</nuxt-link>
         </div>
       </div>
     </div>
     <span class="p-5"></span>
-    <div class="flex p-20 bg-teal-300 shadow-lg rounded-lg items-center justify-center text-center">
+    <div class="flex p-20 bg-orange-300 shadow-lg rounded-lg items-center justify-center text-center">
       <div class="space-x-5 space-y-5">
         <h1 class="font-bold text-5xl text-center">Start selling with us today!</h1>
-        <button class="bg-teal-500 hover:bg-transparent hover:border hover:border-teal-500 text-white text-4xl rounded-lg p-5 font-bold pt-5">
+        <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
           Login
         </button>
-        <button class="bg-teal-500 hover:bg-transparent hover:border hover:border-teal-500 text-white text-4xl rounded-lg p-5 font-bold pt-5">
+        <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
           Sign Up
         </button>
       </div>
     </div>
     <span class="p-5"></span>
-    <div class="flex p-20 bg-teal-300 shadow-lg rounded-lg items-center justify-center text-center">
+    <div class="flex p-20 bg-orange-300 shadow-lg rounded-lg items-center justify-center text-center">
       <div class="space-x-5 space-y-5">
         <h1 class="font-bold text-5xl text-center">Start selling with us today!</h1>
-        <button class="bg-teal-500 hover:bg-transparent hover:border hover:border-teal-500 text-white text-4xl rounded-lg p-5 font-bold pt-5">
+        <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
           Login
         </button>
-        <button class="bg-teal-500 hover:bg-transparent hover:border hover:border-teal-500 text-white text-4xl rounded-lg p-5 font-bold pt-5">
+        <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
           Sign Up
         </button>
       </div>
