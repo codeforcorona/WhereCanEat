@@ -2,18 +2,16 @@
   <div class="flex flex-col h-screen justify-between">
     <NavBar />
     <nuxt />
-    <footer class="h-10"><Footer/></footer>
+    <footer></footer>
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
 
 export default {
   components: { 
-    NavBar,
-    Footer
+    NavBar
   }
 }
 </script>

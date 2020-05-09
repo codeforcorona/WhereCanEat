@@ -30,9 +30,9 @@
                 </div>
             </div>
             <span class="p-5"></span>
-            <div class="flex p-10 shadow-lg rounded-lg bg-gray-200">
-                <div class='p-2 px-2' v-for="outlet in outlets" :key="outlet.name">
-                    <Card shadow :bordered="false" class="p-2" style="width:250px">
+            <div class="md:flex md:flex-wrap justify-center p-10 shadow-lg rounded-lg bg-gray-200">
+                <div class='p-2 px-2' v-for="outlet in outlets" :key="outlet.id">
+                    <Card shadow :bordered="false" class="p-2">
                         <p slot="title">
                             <img src="" alt="Outlet image here">
                         </p>
@@ -63,11 +63,43 @@ export default {
             sort: 'Sort by',
             outlets: [
                 {
+                    id: 1,
                     name: 'Outlet 1',
                     cuisine: 'Indian'
                 },
                 {
+                    id: 2,
                     name: 'Outlet 2',
+                    cuisine: 'Chinese'
+                },
+                {
+                    id: 3,
+                    name: 'Outlet 3',
+                    cuisine: 'Indian'
+                },
+                {
+                    id: 4,
+                    name: 'Outlet 4',
+                    cuisine: 'Chinese'
+                },
+                {
+                    id:5,
+                    name: 'Outlet 5',
+                    cuisine: 'Indian'
+                },
+                {
+                    id: 6,
+                    name: 'Outlet 6',
+                    cuisine: 'Chinese'
+                },
+                {
+                    id: 7,
+                    name: 'Outlet 7',
+                    cuisine: 'Indian'
+                },
+                {
+                    id: 8,
+                    name: 'Outlet 8',
                     cuisine: 'Chinese'
                 }
             ]

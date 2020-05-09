@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="flex flex-col h-screen justify-between">
     <nuxt />
-    <Footer class="absolute inset-x-0 bottom-0 h-8"/>
+    <footer class="h-10"><Footer class="h-10"/></footer>
   </div>
 </template>
 
