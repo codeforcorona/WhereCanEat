@@ -29,13 +29,23 @@
                     </select>
                 </div>
             </div>
-            <div class='flex-col p-2 px-2' v-for="outlet in outlets" :key="outlet.name">
-                <Card class="p-2 rounded-lg">
-                    <p slot="title">{{outlet.name}}</p>
-                </Card>
+            <span class="p-5"></span>
+            <div class="flex p-10 shadow-lg rounded-lg bg-gray-200">
+                <div class='p-2 px-2' v-for="outlet in outlets" :key="outlet.name">
+                    <Card shadow :bordered="false" class="p-2" style="width:250px">
+                        <p slot="title">
+                            <img src="" alt="Outlet image here">
+                        </p>
+                        <p class="pb-4">
+                            {{outlet.name}}, {{outlet.cuisine}}
+                        </p>
+                        <Button type="primary" class="pt-2">
+                            Order Now!
+                        </Button>
+                    </Card>
+                </div>
             </div>
         </div>
-        <p>{{searchText}}</p>
     </div>
 </template>
 
