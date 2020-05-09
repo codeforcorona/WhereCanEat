@@ -58,7 +58,7 @@
                             <p class="p-3 flex-wrap w-32">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                             </p>
-                            <Button type="primary" class="pt-2" @click="logClick(outlet.id)">
+                            <Button type="primary" class="pt-2" @click="order(outlet)">
                                 Order Now!
                             </Button>
                         </div>
@@ -75,8 +75,8 @@ import axois from '@nuxtjs/axios';
 
 export default {
     methods: {
-        logClick: function(v) {
-            console.log("clicked order now" + v)
+        order: function(outlet) {
+            this.$store.commit('add_to_cart', outlet)
         }
     },
     computed: {
