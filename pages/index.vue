@@ -3,10 +3,30 @@
     <div class="flex-wrap text-center justify-center md:justify-start md:text-left md:flex p-20 bg-teal-300 shadow-lg rounded-lg items-center content-center">
       <img src="@/assets/images/cover1.jpg"  class="w-64 h-64 object-cover rounded-full" alt="food-image"/>
       <div class="mx-auto">
-        <h1 class="font-bold text-xl md:text-5xl py-5">What would you like today?</h1>
-        <nuxt-link to="/search" class="flex-wrap rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Takeaway</nuxt-link>
-        <span class="px-3"></span>
-        <nuxt-link to="/search" class="flex-wrap rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Delivery</nuxt-link>
+        <h1 class="font-bold text-xl md:text-5xl">What would you like today?</h1>
+          <div class="flex items-center py-2 bg-gray-200 p-5 rounded-lg hover:bg-white mb-5">
+
+              <!-- Location input  -->
+              <input type="text" class="focus:outline-none text-2xl" v-model='postalCode'/>
+
+              <!-- Geolocation button -->
+              <svg class="fill-current hover:text-blue-700 text-teal-500 h-16 w-16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+
+              <!-- Onclick need to send data to search -->
+              <button class="flex-shrink-0 bg-teal-500 border-teal-500 text-sm border-4 text-white py-1 px-2 rounded-lg hover:bg-white hover:text-teal-500 hover:border-teal-700 text-2xl">
+                  Find Food
+              </button>
+
+          </div>
+        <div class="block flex-wrap md:flex">
+          <!-- Onclick needs to seend data on takeaway / delivery --> 
+          <nuxt-link to="/search" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Takeaway</nuxt-link>
+          <span class="px-3"></span>
+          <!-- Onclick needs to send data on takeaway / delivery -->
+          <nuxt-link to="/search" class="rounded-lg text-4xl font-semibold bg-teal-500 shadow-md p-5 text-white">Order Delivery</nuxt-link>
+        </div>
       </div>
     </div>
     <span class="p-5"></span>
@@ -44,7 +64,8 @@ import axios from 'axios';
 export default {
   data: function () {
     return {
-      todo: ''
+      todo: '',
+      postalCode: 'Your postal code here:'
     }
   },
   components: {
@@ -68,4 +89,7 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+input {
+    @apply appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight 
+}
 </style>

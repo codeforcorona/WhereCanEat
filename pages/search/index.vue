@@ -8,20 +8,35 @@
                 </button>
             </div>
         </Nav-Bar>
-        <div class="lg:px-64 p-6">
-            <div class="bg-gray-200 rounded-lg shadow-lg p-5">
-                <div class='text-lg'>
-                    <select class="appearance-none bg-gray-300 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="cuisine">
+        <div class="flex lg:px-32 p-6">
+            <div class="bg-teal-300 rounded-lg shadow-lg p-5">
+                <div class='flex-col text-lg space-y-5'>
+                      <div class="flex items-center border-b border-b-2 border-teal-500 py-2">
+                        <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none text-md" type="text" v-model="postalCode"/>
+                        <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                            Search
+                        </button>
+                    </div>
+                    <div class="flex-col bg-gray-200 hover:bg-gray-100 focus:bg-white p-3 rounded-md">
+                        <label for="Price Range">Price Range</label>
+                        <Slider v-model="priceRange" range></Slider>
+                    </div>
+                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="orderType">
+                        <option>Order Type</option>
+                        <option>Takeaway</option>
+                        <option>Delivery</option>
+                    </select>
+                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="cuisine">
                         <option>Filter Cuisine</option>
                         <option>Chinese</option>
                         <option>Italian</option>
                         <option>Indian</option>
                     </select>
-                    <select class="appearance-none bg-gray-300 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="filter">
+                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="filter">
                         <option>Filter</option>
                         <option>Other Filter here</option>
                     </select>
-                    <select class="appearance-none bg-gray-300 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="sort">
+                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="sort">
                         <option>Sort by</option>
                         <option>Name</option>
                         <option>Price</option>
@@ -30,7 +45,7 @@
                 </div>
             </div>
             <span class="p-5"></span>
-            <div class="md:flex md:flex-wrap justify-center p-10 shadow-lg rounded-lg bg-gray-200">
+            <div class="md:flex md:flex-wrap justify-center p-10 shadow-lg rounded-lg bg-teal-300">
                 <div class='p-2 px-2' v-for="outlet in outlets" :key="outlet.id">
                     <Card shadow :bordered="false" class="p-2">
                         <div>
@@ -63,9 +78,12 @@ export default {
         return {
             searchText: 'Search for your favourite food!',
             foodItems: [],
+            postalCode: 'Postal Code',
             cuisine: 'Filter Cuisine',
             filter: 'Filter',
+            orderType: 'Order Type',
             sort: 'Sort by',
+            priceRange: [0,100],
             outlets: [
                 {
                     id: 1,
@@ -106,7 +124,22 @@ export default {
                     id: 8,
                     name: 'Outlet 8',
                     cuisine: 'Chinese'
-                }
+                },
+                {
+                    id:9,
+                    name: 'Outlet 5',
+                    cuisine: 'Indian'
+                },
+                {
+                    id: 10,
+                    name: 'Outlet 6',
+                    cuisine: 'Chinese'
+                },
+                {
+                    id: 11,
+                    name: 'Outlet 7',
+                    cuisine: 'Indian'
+                },
             ]
         }
     },
