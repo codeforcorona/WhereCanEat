@@ -1,6 +1,6 @@
 # WhereCanEat
 
-##About us:
+## About us:
 We are a team of 3 NUS students who worked together to develop this application.
 
 
