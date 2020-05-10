@@ -51,7 +51,7 @@
                   class= 'p-2 px-2'
                   v-for="item in foodItems" 
                   :key="item.imageurl"
-                  cuisine="Placeholder Cuisine"
+                  cuisine="Cuisine"
                   :name="item.restaurant"
                   :time="item.timeaway"
                   rate="5/5"

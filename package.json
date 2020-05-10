@@ -15,7 +15,9 @@
     "axios": "^0.19.2",
     "iview": "^3.5.4",
     "nuxt": "^2.0.0",
-    "vue-geolocation-api": "^0.1.17"
+    "vue-geolocation-api": "^0.1.17",
+    "vuex-persist": "^2.2.0",
+    "vuex-persistedstate": "^3.0.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0"
