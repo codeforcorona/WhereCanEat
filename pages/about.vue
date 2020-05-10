@@ -4,7 +4,10 @@
           <img src="@/assets/images/cover1.jpg"  class="w-64 h-64 object-cover rounded-full" alt="food-image"/>
           <div class="pl-20">
             <h1 class="font-bold text-xl md:text-5xl">Who are we?</h1>
-            <p class='font-serif text-lg md:text-2xl'><span class="font-bold text-xl md:text-4xl font-sans">WhereCanEat!</span> aspires to create a food platform that does not discriminate</p>
+            <p class='font-serif text-lg md:text-2xl'>
+              <span class="font-bold text-xl md:text-4xl font-sans">WhereCanEat!</span> 
+              is created by 3 NUS students aspiring to create an integrated food delivery platform. Dedicated to helping you find the best and most value-for-money food merchants around, we wanted to show all the food delivery options in one place: a simpler alternative to the various food delivery options that make ordering food much more complicated than it should be.
+            </p>
           </div>
         </div>
     </div>

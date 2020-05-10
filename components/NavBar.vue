@@ -36,7 +36,7 @@
             </nuxt-link>
             <button
                 @click="isOpen=!isOpen"
-                class="p-3 text-teal-300 hover:text-white"
+                class="p-3 text-orange-200 hover:text-orange-100"
             >
                 Cart <span class="text-red-500 font-semibold hover:text-red-600">{{shoppingCart.length}}</span>
             </button>
