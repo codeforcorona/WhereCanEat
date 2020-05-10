@@ -3,7 +3,7 @@
         <Nav-Bar>
             <div class="flex w-1/3 items-center border-b border-b-2 border-orange-500 bg-gray-200 rounded p-2 hover:bg-white">
                 <input v-model="searchText"/>
-                <button type="button">
+                <button type="button" @click="reload">
                     Search
                 </button>
             </div>
@@ -13,7 +13,7 @@
                 <div class='flex-col text-lg space-y-5'>
                       <div class="flex items-center border-b border-b-2 border-orange-500 py-2">
                         <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none text-md" type="text" v-model="postalCode"/>
-                        <button class="flex-shrink-0 bg-orange-500 hover:bg-orange-700 border-orange-500 hover:border-orange-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                        <button class="flex-shrink-0 bg-orange-500 hover:bg-orange-700 border-orange-500 hover:border-orange-700 text-sm border-4 text-white py-1 px-2 rounded" type="button" @click="reload">
                             Search
                         </button>
                     </div>
@@ -45,19 +45,19 @@
                 </div>
             </div>
             <span class="p-5"></span>
-            <div class="md:flex md:flex-wrap justify-centre p-13 shadow-lg rounded-lg bg-orange-200">
+            <div class="md:flex md:flex-wrap justify-centre shadow-lg rounded-lg bg-orange-200">
               <!--foodcards_-->
               <foodcard
-              class= 'p-2 px-2'
-              v-for="outlet in outlets" 
-              :key="outlet.id"
-              :cuisine="outlet.cuisine"
-              :name="outlet.name"
-              :time="outlet.time"
-              :rate="outlet.rate"
-              :img="outlet.image"
-              :imgAlt="outlet.imageAlt"
-              url = "https://google.com.sg"
+                  class= 'p-2 px-2'
+                  v-for="item in foodItems" 
+                  :key="item.imageurl"
+                  cuisine="Placeholder Cuisine"
+                  :name="item.restaurant"
+                  :time="item.timeaway"
+                  rate="5/5"
+                  :img="getImgUrl(item.imgurl)"
+                  :imgAlt="item.restaurant"
+                  :url = "item.name"
               />
             </div>
         </div>
@@ -73,6 +73,16 @@ export default {
     methods: {
         order: function(outlet) {
             this.$store.commit('add_to_cart', outlet)
+        },
+        stripLineBreaks: function(text) {
+            return text.replace(/(\r\n|\n|\r)/gm," ")
+        },
+        getImgUrl: function(url) {
+            url = String(url)
+            return url.split("|")[1]
+        },
+        reload: function() {
+            window.location.reload()
         }
     },
     computed: {
@@ -144,7 +154,8 @@ export default {
         }        
     },
     components: {
-        NavBar, foodcard
+        NavBar, 
+        foodcard
     },
     layout: 'nonavbar',
     async fetch({store}) {
