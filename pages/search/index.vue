@@ -65,6 +65,9 @@
                     </Card>
                 </div>
             </div>
+            <div v-for="item in foodItems" :key="item.imageurl">
+                {{item.restaurant}}
+            </div>
         </div>
     </div>
 </template>
@@ -80,6 +83,11 @@ export default {
         }
     },
     computed: {
+        foodItems: {
+            get () {
+                return this.$store.state.foodItems
+            }
+        },
         postalCode: {
             get () {
                 return this.$store.state.postalCode
@@ -146,6 +154,9 @@ export default {
         NavBar
     },
     layout: 'nonavbar',
+    async fetch({store}) {
+        await store.dispatch('scrape_data')
+    }
 }
 </script>
 

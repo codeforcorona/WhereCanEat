@@ -23,5 +23,8 @@ export default {
     },
     add_to_cart(state, jsonItem) {
         state.shoppingCart.push(jsonItem)
+    },
+    init_foodItems(state, newItems) {
+        state.foodItems = newItems
     }
 }
