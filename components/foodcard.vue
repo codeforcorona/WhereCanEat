@@ -33,7 +33,7 @@
       },
       getTime: function(text) {
         if (text.toLowerCase().search("closed") == -1) {
-          return "~" + text 
+          return "~" + text + " Mins"
         } else {
           return "CLOSED"
         }

@@ -1,9 +1,9 @@
 <template>
   <div class="flex-col min-w-full items-center justify-center p-5 lg:px-64">
-    <div class="flex-wrap text-center justify-center md:justify-start md:text-left md:flex p-20 bg-orange-300 shadow-lg rounded-lg items-center content-center">
-      <img src="@/assets/images/cover1.jpg" style="display:flex;justify-content:center;" class="w-64 h-64 object-cover rounded-full" alt="food-image"/>
+    <div class="flex-wrap text-center justify-center md:justify-start md:text-left md:flex pb-12 bg-orange-300 shadow-lg rounded-lg items-center content-center">
+      <img src="@/assets/images/cover1.jpg" style="display:flex;justify-content:center;" class="w-full h-64 object-cover rounded-t-lg" alt="food-image"/>
       <div class="mx-auto">
-        <h1 class="font-bold text-xl md:text-5xl">What would you like today?</h1>
+        <h1 class="font-bold text-xl md:text-5xl pt-5">What would you like today?</h1>
           <div class="flex items-center py-2 bg-gray-200 p-5 rounded-lg hover:bg-white mb-5">
 
               <!-- Location input  -->
@@ -36,21 +36,9 @@
         <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
           Login
         </button>
-        <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
+        <nuxt-link to="/contactus" class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5" type="button">
           Sign Up
-        </button>
-      </div>
-    </div>
-    <span class="p-5"></span>
-    <div class="flex p-20 bg-orange-300 shadow-lg rounded-lg items-center justify-center text-center">
-      <div class="space-x-5 space-y-5">
-        <h1 class="font-bold text-5xl text-center">Start selling with us today!</h1>
-        <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
-          Login
-        </button>
-        <button class="bg-orange-500 hover:bg-orange-600 hover:border hover:border-orange-600 text-white text-4xl rounded-lg p-5 font-bold pt-5">
-          Sign Up
-        </button>
+        </nuxt-link>
       </div>
     </div>
   </div>

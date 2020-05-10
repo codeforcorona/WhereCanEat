@@ -21,22 +21,22 @@
                         <label for="Price Range">Price Range</label>
                         <Slider v-model="priceRange" range></Slider>
                     </div>
-                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="orderType">
+                    <select class="block bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="orderType">
                         <option>Order Type</option>
                         <option>Takeaway</option>
                         <option>Delivery</option>
                     </select>
-                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="cuisine">
+                    <select class="block bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="cuisine">
                         <option>Filter Cuisine</option>
                         <option>Chinese</option>
                         <option>Italian</option>
                         <option>Indian</option>
                     </select>
-                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="filter">
+                    <select class="block bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="filter">
                         <option>Filter</option>
                         <option>Other Filter here</option>
                     </select>
-                    <select class="block appearance-none bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="sort">
+                    <select class="block bg-gray-200 hover:bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 px-2" id="grid-state" v-model="sort">
                         <option>Sort by</option>
                         <option>Name</option>
                         <option>Price</option>

@@ -12,7 +12,7 @@ export default {
         console.log(sText)
 
         let response = await this.$axios
-            .post('http://localhost:8080/search',
+            .post('http://localhost:8000/search',
                 {
                     postalCode: pCode,
                     searchPhrase: sText
