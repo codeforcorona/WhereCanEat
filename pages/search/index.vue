@@ -55,9 +55,10 @@
                   :name="item.restaurant"
                   :time="item.timeaway"
                   rate="5/5"
-                  :img="getImgUrl(item.imgurl)"
+                  :img="imgurl"
                   :imgAlt="item.restaurant"
                   :url = "item.name"
+                  @click.native="order(item)"
               />
             </div>
         </div>

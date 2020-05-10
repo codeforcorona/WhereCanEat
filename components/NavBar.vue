@@ -54,7 +54,7 @@
                 </Row>
                 <Row class="text-lg" v-for="item in nonDupShoppingCart" :key="item.id">
                     <Col span="14">
-                        {{item.name}}
+                        {{item.restaurant}}
                     </Col>
                     <Col span="4">
                         {{cartCount(item.id)}}
@@ -122,8 +122,8 @@ export default {
         }
     },
     methods: {
-        cartCount: function(compareId) {
-            return this.shoppingCart.filter(x => x.id == compareId).length
+        cartCount: function(compareurl) {
+            return this.shoppingCart.filter(x => x.imgurl == compareurl).length
         },
         addTotal: function(p) {
             this.total += p
