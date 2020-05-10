@@ -65,9 +65,6 @@
                     </Card>
                 </div>
             </div>
-            <div v-for="item in foodItems" :key="item.imageurl">
-                {{item.restaurant}}
-            </div>
         </div>
     </div>
 </template>
