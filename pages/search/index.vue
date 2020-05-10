@@ -71,8 +71,8 @@ import axois from '@nuxtjs/axios';
 
 export default {
     methods: {
-        logClick: function(v) {
-            console.log("clicked order now" + v)
+        order: function(outlet) {
+            this.$store.commit('add_to_cart', outlet)
         }
     },
     computed: {

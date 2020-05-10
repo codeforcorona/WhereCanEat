@@ -20,5 +20,8 @@ export default {
     set_priceRange(state, newRange) {
         state.priceRange[0] = newRange[0]
         state.priceRange[1] = newRange[1]
+    },
+    add_to_cart(state, jsonItem) {
+        state.shoppingCart.push(jsonItem)
     }
 }
