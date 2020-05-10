@@ -75,7 +75,24 @@
         </div>
 
         <div class="block md:hidden">
-            <img src="../assets/images/menu3.svg" alt="Menu">
+            <img src="../assets/images/menu3.svg" alt="Menu" @click="navOpen=!navOpen">
+            <Drawer v-model="navOpen" class="flex text-lg text-center font-semibold" width = "256" title="Navigation">
+                <nuxt-link to="/" class="block w-full text-lg text-orange-600 text-center hover:text-white hover:bg-orange-300 p-3 rounded-md">
+                    Home
+                </nuxt-link>
+                <nuxt-link to="/" class="block w-full text-lg text-orange-600 text-center hover:text-white hover:bg-orange-300 p-3 rounded-md">
+                    About 
+                </nuxt-link>
+                <nuxt-link to="/" class="block w-full text-lg text-orange-600 text-center hover:text-white hover:bg-orange-300 p-3 rounded-md">
+                    Search
+                </nuxt-link>
+                <nuxt-link to="/" class="block w-full text-lg text-orange-600 text-center hover:text-white hover:bg-orange-300 p-3 rounded-md">
+                    Contact Us
+                </nuxt-link>
+                <button @click="openCartCloseNav" class="block font-bold w-full text-xl text-orange-600 text-center hover:text-white hover:bg-orange-300 p-3 rounded-md">
+                    Cart <span class="text-red-600 hover:text-red-800">{{shoppingCart.length}}</span>
+                </button>
+            </Drawer>
         </div>
     </div>
 </template>
@@ -85,7 +102,8 @@ export default {
     data() {
         return {
             isOpen: false,
-            price: 1.1
+            price: 1.1,
+            navOpen: false,
         }
     },
     computed: {
@@ -109,6 +127,10 @@ export default {
         },
         addTotal: function(p) {
             this.total += p
+        },
+        openCartCloseNav: function() {
+            this.isOpen = !this.isOpen
+            this.navOpen = !this.navOpen
         }
     }
 }
