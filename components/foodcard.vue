@@ -1,19 +1,21 @@
 <template>
-  <div class="p-2 px-2 text-left">
-    <Card shadow :bordered="false" class="p-2">
-      
-      <img class="w-full" :src="img" :alt="imgAlt"> 
+  <div class="m-auto text-left">
+    <Card shadow :bordered="false" :padding=2 class="h-64 w-64">
+      <img class="w-full h-20 object-cover" src="@/assets/images/food2.jpeg" :alt="imgAlt"> 
       <div class="px-6 py-4">
-       <div class="font-bold text-xl mb-2">
-         <a :href="url" class=" text-orange-600 hover:underline hover:text-orange-700">{{ name }}</a>
+       <div class="mb-2">
+          <a 
+            :href="url" 
+            class="truncate text-orange-600 hover:underline hover:text-orange-700 w-64 font-bold text-xl">
+           {{ shortenText(name) }}
+          </a>
        </div>
         <p class="text-gray-700 text-base">{{ cuisine }}</p>
       </div>
-      <div class="px-8 py-4">
-       <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-sm font-semibold text-gray-700 mr-2">~{{time}} min</span>
-       <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-sm font-semibold text-gray-700">{{rate}}</span>
+      <div class="px-8 space-y-3">
+       <span class="inline-block break-normal bg-gray-200 rounded-full p-2 text-sm font-semibold text-gray-700 mr-2">{{ getTime(time) }}</span>
+       <span class="inline-block bg-gray-200 rounded-full p-2 text-sm font-semibold text-gray-700">{{rate}}</span>
       </div> 
-
     </Card>
   </div>
 
@@ -22,6 +24,21 @@
 <script>
   export default {
     props: ['cuisine', 'name', 'time', 'rate', 'img', 'imgAlt','url'],
+    methods: {
+      shortenText: function(text) {
+        if (text.length > 20) {
+          return String(text).substr(0,17) + "..."
+        }
+        return String(text).substr(0,20)
+      },
+      getTime: function(text) {
+        if (text.toLowerCase().search("closed") == -1) {
+          return "~" + text 
+        } else {
+          return "CLOSED"
+        }
+      }
+    }
   }
 
 </script>
