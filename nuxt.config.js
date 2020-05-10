@@ -28,7 +28,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/iview'
+    '@/plugins/iview',
+    { src:'~/plugins/vuex-persist', ssr: false}
   ],
   /*
   ** Nuxt.js dev-modules
@@ -55,8 +56,5 @@ export default {
     */
     extend (config, ctx) {
     },
-    vendor: [
-      'iview'
-    ]
   }
 }
