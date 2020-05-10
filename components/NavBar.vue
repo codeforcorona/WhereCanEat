@@ -2,7 +2,7 @@
     <div class="flex items-center justify-between flex-wrap bg-orange-500 p-6 lg:px-64 shadow-lg">
         <!-- div for logo and name -->
         <div class="flex items-center space-x-1">
-            <img src="@/assets/images/logo3.svg" alt="Logo">
+            <img class="h-10 w-10" src="@/assets/images/firelogo.svg" alt="Logo">
             <h1 class="font-semibold text-2xl text-red-800 tracking-tight">WhereCanEat!</h1>
         </div>
         
