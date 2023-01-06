@@ -14,7 +14,7 @@
     "@nuxtjs/axios": "^5.10.3",
     "axios": "^0.19.2",
     "iview": "^3.5.4",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue-geolocation-api": "^0.1.17",
     "vuex-persist": "^2.2.0",
     "vuex-persistedstate": "^3.0.1"
